@@ -16,6 +16,7 @@ app.get("/", (req,res)=>{
 app.get('/bd', async (req, res) => {
     try {
       const result = await pool.query('SELECT NOW()');
+      console.log(result.rows)
       res.json(result.rows);
     } catch (error) {
       console.error('Erro ao executar query:', error);
