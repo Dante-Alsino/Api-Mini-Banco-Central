@@ -15,7 +15,7 @@ pool.connect((err, client, release) => {
     return;
   }
   client.query('SELECT NOW()', (err, result) => {
-    release(); // Libera a conexão de volta para o pool
+    release();
     if (err) {
       console.error('Erro ao executar query', err.stack);
     } else {
