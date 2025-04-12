@@ -18,5 +18,10 @@ router.get('/bd', async (req, res) => {
       res.status(500).send('Erro no servidor');
     }
   });
+  
+
+  
+const testeController = require('./bd/controllers/testeController');
+router.get('/teste', testeController.cadastrarUsuarioTeste);
 
 module.exports = router;
