@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
     }, {
-      tableName: 'contas'
+      tableName: 'Contas'
     });
   
     Conta.associate = function(models) {

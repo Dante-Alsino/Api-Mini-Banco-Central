@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
     },
   }, {
-    tableName: 'Usuarios' // atenção ao nome da tabela aqui
+    tableName: 'Usuarios' // Tabela
   });
 
   Usuario.associate = function(models) {

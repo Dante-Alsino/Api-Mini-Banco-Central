@@ -20,8 +20,23 @@ router.get('/bd', async (req, res) => {
   });
   
 
-  
+
 const testeController = require('./bd/controllers/testeController');
 router.get('/teste', testeController.cadastrarUsuarioTeste);
+
+const instituicaoController = require('./bd/controllers/instituicaoController');
+router.post('/instituicoes', instituicaoController.criarInstituicao);
+
+const contaController = require('./bd/controllers/contaController');
+router.post('/usuarios/:id/contas', contaController.criarConta);
+
+const transacaoController = require('./bd/controllers/transacaoController');
+router.post('/usuarios/:id/transacoes', transacaoController.criarTransacao);
+
+
+const usuarioController = require('./bd/controllers/usuarioController');
+router.get('/usuarios/:id/saldo', usuarioController.getSaldoTotal);
+
+router.get('/usuarios/:id/extrato', usuarioController.getExtrato);
 
 module.exports = router;

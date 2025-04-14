@@ -20,8 +20,13 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         defaultValue: DataTypes.NOW,
       },
+      updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+      },
     }, {
-      tableName: 'transacoes',
+      tableName: 'Transacoes',
       updatedAt: false
     });
   
