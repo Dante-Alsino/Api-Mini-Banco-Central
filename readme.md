@@ -1,4 +1,4 @@
-# API Financeira - README
+# API Agregadora de Contas Bancárias (Mini Banco Central)
 
 Esta é uma API REST para gerenciamento de usuários, contas bancárias, transações e instituições financeiras. Abaixo estão listadas todas as rotas disponíveis, suas funcionalidades e exemplos de uso.
 
@@ -131,6 +131,7 @@ Esta é uma API REST para gerenciamento de usuários, contas bancárias, transa�
 
 Retorna um usuário de teste criado para fins de validação.
 
+---
 ## 📁 Estrutura do Projeto
 
 ```
@@ -154,15 +155,14 @@ Retorna um usuário de teste criado para fins de validação.
 ### 1. **Clone o repositório**
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repo.git
-cd nome-do-repo
+git clone https://github.com/Dante-Alsino/Api-Mini-Banco-Central.git
 ```
 
 ---
 
 ### 2. **Configure o arquivo `.env`**
 
-No arquivo `.env` na raiz, está toda as informaçoes para criação para banco de dados, caso deseje alterar alguma coisa, é nele que deve mudar, atulamente esta assim:
+No arquivo `.env` na raiz, está toda as informaçoes para criação para banco de dados, caso deseje alterar alguma coisa é nele que deve mudar, atualmente está assim:
 
 ```
 PG_USER=postgres
