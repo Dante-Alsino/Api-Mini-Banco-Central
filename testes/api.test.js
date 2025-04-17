@@ -41,7 +41,7 @@ describe('Testes da API', () => {
   it('deve criar uma transação para o usuário', async () => {
     const res = await request(app)
       .post(`/usuarios/${usuarioId}/transacoes`)
-      .send({ tipo: 'credito', valor: 500, descricao: 'Depósito inicial' });
+      .send({ contaId:contaId, tipo: 'credito', valor: 500, descricao: 'Depósito inicial' });
 
     expect(res.statusCode).toBe(201);
     expect(res.body.id).toBeDefined();

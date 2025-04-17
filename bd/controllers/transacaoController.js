@@ -16,7 +16,8 @@ exports.criarTransacao = async (req, res) => {
     });
 
     // Atualiza saldo
-    conta.saldo += tipo === 'credito' ? valor : -valor;
+    let valorNum = parseFloat(valor)
+    conta.saldo += tipo === 'credito' ? valorNum : -valorNum;
     await conta.save();
 
     res.status(201).json(novaTransacao);
