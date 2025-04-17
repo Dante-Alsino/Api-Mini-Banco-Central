@@ -8,8 +8,9 @@ app.use(express.json());
 
 app.use('/', rotas)
 
-
-const port = 3000;
-app.listen(port, ()=>{
-    console.log(`rodando em localhost:${port}`);
-})
+if (require.main === module) {
+    const PORT = 3000
+    app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
+  }
+  
+module.exports = app;

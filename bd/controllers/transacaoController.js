@@ -24,3 +24,18 @@ exports.criarTransacao = async (req, res) => {
     res.status(500).json({ erro: erro.message });
   }
 };
+
+
+exports.deletarTransacao = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const transacao = await Transacao.findByPk(id);
+
+    if (!transacao) return res.status(404).json({ erro: 'Transação não encontrada.' });
+
+    await transacao.destroy();
+    res.status(204).json({ mensagem: 'Transação deletada com sucesso.' });
+  } catch (erro) {
+    res.status(500).json({ erro: erro.message });
+  }
+};

@@ -21,9 +21,8 @@ router.get('/bd', async (req, res) => {
   
 
 
-const testeController = require('./bd/controllers/testeController');
-router.get('/teste', testeController.cadastrarUsuarioTeste);
 
+//POST
 const instituicaoController = require('./bd/controllers/instituicaoController');
 router.post('/instituicoes', instituicaoController.criarInstituicao);
 
@@ -33,10 +32,32 @@ router.post('/usuarios/:id/contas', contaController.criarConta);
 const transacaoController = require('./bd/controllers/transacaoController');
 router.post('/usuarios/:id/transacoes', transacaoController.criarTransacao);
 
-
 const usuarioController = require('./bd/controllers/usuarioController');
+router.post('/usuarios', usuarioController.criarUsuario);
+
+//GET
+const testeController = require('./bd/controllers/testeController');
+router.get('/teste', testeController.cadastrarUsuarioTeste);
+
 router.get('/usuarios/:id/saldo', usuarioController.getSaldoTotal);
 
 router.get('/usuarios/:id/extrato', usuarioController.getExtrato);
+
+
+//PUT
+router.put('/usuarios/:id', usuarioController.atualizarUsuario);
+
+router.put('/contas/:id', contaController.atualizarConta);
+
+router.put('/instituicoes/:id', instituicaoController.atualizarInstituicao);
+
+//DELETE
+router.delete('/usuarios/:id', usuarioController.deletarUsuario);
+
+router.delete('/instituicoes/:id', instituicaoController.deletarInstituicao);
+
+router.delete('/contas/:id', contaController.deletarConta);
+
+router.delete('/transacoes/:id', transacaoController.deletarTransacao);
 
 module.exports = router;
